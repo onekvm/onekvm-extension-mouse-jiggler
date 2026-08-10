@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "columns": 1,
+  "sections": [{
+    "title": "Schedule",
+    "i18n": {"default": "Schedule", "zh": "定时设置", "zh-TW": "定時設定"},
+    "columns": 1,
+    "settings": ["interval_seconds"]
+  }]
+}

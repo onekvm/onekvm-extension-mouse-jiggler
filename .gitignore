@@ -1,0 +1,16 @@
+# CMake and local binaries
+/build/
+/cmake-build-*/
+/onekvm-mouse-jiggler
+/compile_commands.json
+
+# Rendered/package output
+/manifest.json
+*.ipk
+*.ipks
+
+# Local editor and OS files
+.DS_Store
+*.swp
+*.swo
+*~

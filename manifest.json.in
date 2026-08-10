@@ -1,0 +1,43 @@
+{
+  "manifest_version": 1,
+  "id": "mouse-jiggler",
+  "i18n": {
+    "default": {"name": "Mouse Jiggler", "description": "Periodically moves the remote mouse by one pixel to prevent the attached host from sleeping."},
+    "zh": {"name": "鼠标抖动", "description": "定时让远程鼠标往返移动一个像素，防止所连接的主机进入休眠。"},
+    "zh-TW": {"name": "滑鼠抖動", "description": "定時讓遠端滑鼠往返移動一個像素，防止所連接的主機進入休眠。"}
+  },
+  "version": "@VERSION@",
+  "api_version": 2,
+  "architecture": "@ARCH@",
+  "kind": "service",
+  "author": "OneKVM",
+  "homepage": "https://github.com/onekvm/onekvm-extension-mouse-jiggler",
+  "entrypoint": "bin/onekvm-mouse-jiggler",
+  "permissions": [],
+  "capabilities": ["hid"],
+  "services": [{
+    "id": "jiggler",
+    "i18n": {
+      "default": {"name": "Mouse jiggler", "description": "Low-frequency mouse activity service."},
+      "zh": {"name": "鼠标抖动", "description": "低频率鼠标活动服务。"},
+      "zh-TW": {"name": "滑鼠抖動", "description": "低頻率滑鼠活動服務。"}
+    }
+  }],
+  "icon": {"source": "lucide", "name": "mouse-pointer-2"},
+  "page": {"title": "Mouse Jiggler", "renderer": "layout", "entrypoint": "web/page.json", "icon": {"source": "lucide", "name": "mouse-pointer-2"}},
+  "settings_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["interval_seconds"],
+    "properties": {
+      "interval_seconds": {
+        "type": "integer", "title": "Jiggle interval (seconds)", "default": 60, "minimum": 5, "maximum": 86400,
+        "i18n": {"default": "Jiggle interval (seconds)", "zh": "抖动间隔（秒）", "zh-TW": "抖動間隔（秒）"}
+      }
+    }
+  },
+  "secret_fields": [],
+  "memory_budget": "1M",
+  "resource_limits": {"memory_max": "8M", "cpu_quota": "5%", "tasks_max": 4, "limit_nofile": 16},
+  "healthcheck": {"type": "exec", "command": ["bin/onekvm-mouse-jiggler", "--health"], "timeout_seconds": 5}
+}
