@@ -24,8 +24,8 @@ The package name is `onekvm-extension-mouse-jiggler`. Install it through your
 OneKVM distribution package or image, then manage it with the plugin manager:
 
 ```sh
-onekvm-plugin-manager enable mouse-jiggler
-onekvm-plugin-manager disable mouse-jiggler
+onekvm-extension enable mouse-jiggler
+onekvm-extension disable mouse-jiggler
 ```
 
 ## Configuration

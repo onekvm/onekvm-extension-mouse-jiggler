@@ -22,8 +22,8 @@
 或镜像安装，然后使用插件管理器控制扩展：
 
 ```sh
-onekvm-plugin-manager enable mouse-jiggler
-onekvm-plugin-manager disable mouse-jiggler
+onekvm-extension enable mouse-jiggler
+onekvm-extension disable mouse-jiggler
 ```
 
 ## 配置
